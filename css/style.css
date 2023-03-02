@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*::before,*::after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*=======================================================================================================*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.box {
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.box .card {
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    background: url(../img/t.png);
+    background-size: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* opacity: 0; */
+    width: 300px;
+    min-height: 400px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.75);
+    border-left: 1px solid rgba(255,255,255,0.75);
+    border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.05);
+    transform-style: preserve-3d;
+}
+.elements {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.1);
+    transform: translateZ(80px);
+
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.75);
+    border-left: 1px solid rgba(255,255,255,0.75);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.05);
+}
+.elements.bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(../img/ak-47.png);
+    background-size: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: 0.5s;
+}
+.box:hover .elements.bg::before {
+    opacity: 1;
+}
+.elements.img3Bx {
+    top: -30px;
+    left: initial;
+    right: -10px;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    transform: translateZ(120px);
+}
+.elements.img3Bx img {
+    position: absolute;
+    width: calc(100% - 20px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.75);
+    border-left: 1px solid rgba(255,255,255,0.75);
+    border-radius: 8px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.05);
+    opacity: 0;
+    transition: 0.5s;
+}
+.box:hover .elements.img3Bx img {
+    opacity: 1;
+}
+.elements.name {
+    top: 235px;
+    left: initial;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    transform: translateZ(150px);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border: none;
+    box-shadow: none;
+    color: #e8d79a;
+    font-size: 40px;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+    opacity: 0;
+}
+.box:hover .elements.name {
+    top: 180px;
+    opacity: 1;
+}
+.elements.content {
+    top: initial;
+    left: initial;
+    bottom: -30px;
+    right: -20px;
+    width: 60%;
+    min-height: 180px;
+    padding: 10px;
+    transform: translateZ(180px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.elements.content p {
+    position: relative;
+    color: #f1c21b;
+    font-size: 14px;
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: 0.5s;
+}
+.box:hover .elements.content p {
+    opacity: 1;
+}
+
+
